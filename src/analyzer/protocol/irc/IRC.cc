@@ -556,6 +556,11 @@ void IRC_Analyzer::DeliverStream(int length, const u_char* line, bool orig)
 				}
 			break;
 
+		case 670:
+			// StartTLS success reply to StartTLS
+			StartTLS();
+			break;
+
 		// All other server replies.
 		default:
 			val_list* vl = new val_list;
